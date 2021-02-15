@@ -1,11 +1,11 @@
-import styles from "../styles/Home.module.css";
+import styles from '../../styles/Tournaments.module.css';
 
-export default function Home() {
+export default function ListTournaments() {
   return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.message}>
-          <a>Welcome to VRSUS.</a>
+          <a>Tournaments</a>
         </div>
       </div>
     </>
