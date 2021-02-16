@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+
 import Bracket  from '../../../components/Bracket.js';
 import dbConnect from '../../../database/connect.js';
 import Tournament from '../../../database/models/Tournament.js';
 import styles from '../../../styles/TournamentPage.module.css';
 
 const TournamentPage = ({ tournament }) => {
+  const router = useRouter();
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
   const [contestant, setContestant] = useState({
@@ -27,6 +28,8 @@ const TournamentPage = ({ tournament }) => {
       if (!res.ok) {
         throw new Error(res.status);
       }
+
+      router.push(`/tournaments/${tournament._id}`);
     } catch (error) {
       setMessage('Failed to sign up');
     }
@@ -44,6 +47,7 @@ const TournamentPage = ({ tournament }) => {
   }
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     addContestant(contestant);
   }
 
@@ -81,7 +85,7 @@ const TournamentPage = ({ tournament }) => {
         <div className={styles.bracket_wrapper}>
           <a>Bracket</a>
           <div className={styles.bracket_container}>
-            <Bracket contestants={tournament.contestants} bracket={tournament.bracket}/>
+            <Bracket tournament={tournament}/>
           </div>
         </div>
       </div>
