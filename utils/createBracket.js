@@ -17,14 +17,17 @@ const seeding = (numPlayers) => {
 }
 
 const createBracket = (contestants) => {
+    if (contestants.length === 1) {
+      return [[[contestants[0], 'bye']]];
+    }
     let n = 0; //number of rounds
     //create contestant pool, filling in empty places with byes
-    let spots = [];
+    let entrantList = [];
     while (2**n < contestants.length) {
       n++;
     }
     for (let i = 0; i < 2**n; i++) {
-      spots.push(contestants[i] ? contestants[i]: 'bye');
+      entrantList.push(contestants[i] ? contestants[i]: 'bye');
     }
     //create bracket structure
     let bracket = [];
@@ -33,17 +36,16 @@ const createBracket = (contestants) => {
     }
     bracket = bracket.map((round, index) => {
       let matches = [];
-      console.log(index);
       for (let i = 0; i < 2**(n-index) / 2; i++) {
         matches.push(['tbd', 'tbd']);
       }
       return matches;
     })
     //fill in first round, giving byes based on first come first serve basis
-    let seed = seeding(spots.length);
-    let seedIndex = seed.map(i => i - 1);
-    for (let i = 0; i < seed.length; i++) {
-      bracket[0][i >> 1][i % 2] = spots[seedIndex[i]];
+    let seedMap = seeding(entrantList.length);
+    let seedIndex = seedMap.map(i => i - 1);
+    for (let i = 0; i < seedIndex.length; i++) {
+      bracket[0][i >> 1][i % 2] = entrantList[seedIndex[i]];
     }
     return bracket;
 }
