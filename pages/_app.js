@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+//import '../styles/form.css';
 import '../styles/styles.css';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -28,9 +29,9 @@ function MyApp({ Component, pageProps }) {
               <a>Home</a>
             </Link>
             <Link href="/tournaments">
-              <a>Tournaments</a>
+              <a>Browse</a>
             </Link>
-            <Link href="tournaments/new">
+            <Link href="/tournaments/new">
               <a>Create</a>
             </Link>
           </div>

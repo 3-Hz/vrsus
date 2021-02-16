@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <div className={styles.wrapper}>
         <div className={styles.message}>
-          <a>Welcome to VRSUS.</a>
+          <a>Welcome to VRSUS</a>
         </div>
       </div>
     </>

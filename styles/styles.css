@@ -34,6 +34,11 @@
   justify-content: center;
   align-items: center;
   text-align: left;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
 }
 
 .grid {

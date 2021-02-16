@@ -1,5 +1,5 @@
-import dbConnect from '../../../database/connect';
-import Tournament from '../../../database/models/Tournament';
+import dbConnect from '../../../../database/connect';
+import Tournament from '../../../../database/models/Tournament';
 
 export default async function handler(req, res) {
   const {
@@ -23,14 +23,23 @@ export default async function handler(req, res) {
       break;
     case 'PUT':
       try {
-
+        const tournament = await Tournament.findByIdAndUpdate(id, req.body, {
+          new: true,
+          runValidators: true
+        });
+        if (!tournament) {
+          return res.status(400).json( { success: false });
+        }
       } catch {
         res.status(400).json({ success: false });
       }
       break;
     case 'DELETE':
       try {
-
+        const deletedTournament = await Tournament.deleteOne({ _id: id });
+        if (!deletedPet) {
+          return res.status(400).json({ success: false });
+        }
       } catch {
         res.status(400).json({ success: false });
       }

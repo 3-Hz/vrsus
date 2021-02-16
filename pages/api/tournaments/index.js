@@ -17,7 +17,8 @@ export default async function handler(req, res) {
       break;
     case 'POST':
       try {
-
+        const tournament = await Tournament.create(req.body);
+        res.status(201).json( { success: true, data: tournament });
       } catch (error) {
         res.status(400).json({ success: false });
       }

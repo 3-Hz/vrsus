@@ -1,0 +1,89 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color:white;
+  font-size: xx-large;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+}
+
+.subtitle {
+  color:white;
+  font-size: x-large;
+  font-style: italic;
+}
+
+/* entry module */
+.entry_module_wrapper {
+  max-width: 1200px;
+  min-width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contestant_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contestant_list a {
+  color:white;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+}
+
+.contestant {
+  color: white;
+}
+
+.signup {
+  display: flex;
+  justify-content: space-between;
+  max-height: 30px;
+}
+
+.signup button {
+  background-color: #473d3c;
+  border: 0;
+  color:white;
+  padding: .5rem;
+}
+
+.signup button:hover {
+  border: 1px solid #fd02fd;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+}
+
+/* bracket styles */
+.bracket_wrapper {
+  margin-top: 2rem;
+}
+.bracket_wrapper a {
+  color:white;
+  font-size: x-large;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+}

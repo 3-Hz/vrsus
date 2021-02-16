@@ -18,6 +18,10 @@ const TournamentSchema = new mongoose.Schema({
   bracket: {
     type: Array,
     default: []
+  },
+  started: {
+    type: Boolean,
+    default: false
   }
 })
 

@@ -1,0 +1,16 @@
+.bracket_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bracket_round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.match_card {
+  display: flex;
+  flex-direction: column;
+}

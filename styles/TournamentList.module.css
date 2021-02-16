@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message a {
+  color:white;
+  font-size: xx-large;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+}
+
+.tournament_list {
+  margin-top: 1rem;
+}
+
+.card {
+  color: white;
+  background-color: #463c3b;
+  border: 2px solid #2a2a2a;
+  border-radius: .25rem;
+  padding: .25rem;
+}
+
+.card:hover {
+  cursor: pointer;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+  border: 2px solid #fd02fd;
+}
+
+.category {
+  padding-left: 2rem;
+  float: right;
+  font-style: italic;
+}
