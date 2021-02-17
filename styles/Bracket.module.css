@@ -19,7 +19,8 @@
 
 .bracket_round_name {
   color: white;
-  text-align: left;
+  text-align: center;
+  margin-right: 1rem;
 }
 
 .match_card {
