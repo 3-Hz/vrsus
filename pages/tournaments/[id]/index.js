@@ -113,7 +113,7 @@ const TournamentPage = ({ tournament }) => {
             <a>Contestants</a>
             {tournament.contestants.map((contestant, index) => (
                 <div key={index} className={styles.contestant}>
-                  <a>{contestant}</a>
+                  <a>{index + 1}. {contestant}</a>
                   {/* Display removal button if tournament not started */}
                   {tournament.started ? <></> :
                     <button
@@ -171,9 +171,7 @@ const TournamentPage = ({ tournament }) => {
           }
 
           {/* Bracket component */}
-          <div className={styles.bracket_container}>
-            <Bracket tournament={tournament}/>
-          </div>
+          <Bracket tournament={tournament}/>
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
 /* Nav Area */
 .nav-wrapper{
   width: 100%;
+  background-color: #282840;
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .top-bar {

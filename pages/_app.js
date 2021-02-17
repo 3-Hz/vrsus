@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         </div>
       </div>
 
-      <div>
+      <div className="app-body">
         <Component {...pageProps} />
       </div>
     </>
