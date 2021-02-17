@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .message a {
   color:white;
   font-size: xx-large;
@@ -12,4 +18,11 @@
   1px 1px 2px #fd02fd,
   1px -1px 0 #fd02fd,
   -1px -1px 0 #fd02fd;
+  margin-bottom: 1rem;
+}
+
+.message p {
+  color: white;
+  font-size: large;
+  margin: 0;
 }

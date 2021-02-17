@@ -57,6 +57,12 @@ const Bracket = ({ tournament }) => {
     }
   }
 
+  const namedRounds = {
+    4: 'Quarterfinals',
+    2: 'Semifinals',
+    1: 'Finals'
+  }
+
   return (
     <>
       <p>{message}</p>
@@ -67,22 +73,30 @@ const Bracket = ({ tournament }) => {
       </div>
       <div className={styles.bracket_container}>
         {tournament.bracket.map((round, roundIndex) => (
-          <div key={roundIndex} className={styles.bracket_round}>
-            {round.map((match, matchIndex) => (
-              <div key={matchIndex} className={styles.match_card}>
-                {match.map((player, playerIndex) => (
-                  <div key={playerIndex} className={styles.player_card} onClick={(e) => handleClick(e, roundIndex, matchIndex, player)}>
-                    {player}
-                  </div>
-                ))}
-              </div>
-            ))}
+          <div>
+            <div className={styles.bracket_round_name}>
+              {namedRounds[round.length] ? namedRounds[round.length] : 'Round ' + (roundIndex + 1)}
+            </div>
+            <div key={roundIndex} className={styles.bracket_round}>
+              {round.map((match, matchIndex) => (
+                <div key={matchIndex} className={styles.match_card}>
+                  {match.map((player, playerIndex) => (
+                    <div key={playerIndex} className={styles.player_card} onClick={(e) => handleClick(e, roundIndex, matchIndex, player)}>
+                      {player}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
-        <div className={styles.bracket_round}>
-          <div className={styles.match_card}>
-            <div className={styles.player_card}>
-              {tournament.champion || "tbd"}
+        <div>
+          <div className={styles.bracket_round_name}>Champion</div>
+          <div className={styles.bracket_round}>
+            <div className={styles.match_card}>
+              <div className={styles.player_card}>
+                {tournament.champion || "tbd"}
+              </div>
             </div>
           </div>
         </div>
