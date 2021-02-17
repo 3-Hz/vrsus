@@ -1,16 +1,42 @@
 .bracket_container {
   display: flex;
+  height: 200%;
   flex-direction: row;
   justify-content: center;
+  margin-top: 1rem;
+  padding-bottom: 10vh;
+  overflow: auto;
 }
 
 .bracket_round {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-right: 1rem;
 }
 
 .match_card {
+  max-width: 200px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
+}
+
+.player_card {
+  color: white;
+  background-color: #473d3c;
+  border: 1px solid #2a2a2a;
+  border-radius: .25rem;
+  padding: .2rem;
+  max-width: 100%;
+}
+
+.player_card:hover {
+  border: 1px solid #fd02fd;
+  text-shadow:
+  -1px 1px 2px #fd02fd,
+  1px 1px 2px #fd02fd,
+  1px -1px 0 #fd02fd,
+  -1px -1px 0 #fd02fd;
+  cursor: pointer;
 }

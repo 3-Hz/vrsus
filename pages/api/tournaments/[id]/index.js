@@ -28,8 +28,9 @@ export default async function handler(req, res) {
           runValidators: true
         });
         if (!tournament) {
-          return res.status(400).json( { success: false });
+          return res.status(400).json({ success: false });
         }
+        res.status(200).json({ success: true, data: tournament });
       } catch {
         res.status(400).json({ success: false });
       }
@@ -37,9 +38,10 @@ export default async function handler(req, res) {
     case 'DELETE':
       try {
         const deletedTournament = await Tournament.deleteOne({ _id: id });
-        if (!deletedPet) {
+        if (!deletedTournament) {
           return res.status(400).json({ success: false });
         }
+        res.status(200).json( { success: true, data: deletedTournament })
       } catch {
         res.status(400).json({ success: false });
       }

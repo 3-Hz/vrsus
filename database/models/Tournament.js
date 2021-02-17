@@ -22,6 +22,10 @@ const TournamentSchema = new mongoose.Schema({
   started: {
     type: Boolean,
     default: false
+  },
+  champion: {
+    type: String,
+    default: 'tbd'
   }
 })
 

@@ -67,6 +67,21 @@ const Form = ({ formId, tournamentForm, forNewTournament = true }) => {
     }
   }
 
+  const deleteTournament = async () => {
+    const { id } = router.query;
+    try {
+      const res = await fetch(`/api/tournaments/${id}`, {
+        method: 'DELETE'
+      })
+      if (!res.ok) {
+        throw new Error(res.status);
+      }
+      router.push(`/tournaments`);
+    } catch (error) {
+      setMessage('Failed to delete tournament');
+    }
+  }
+
   const handleChange = (e) => {
     const target = e.target;
     const value = target.value;
@@ -96,7 +111,8 @@ const Form = ({ formId, tournamentForm, forNewTournament = true }) => {
     return err
   }
 
-  return (
+  return forNewTournament ?
+  (
     <>
       <form className={styles.form} id={formId} onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
@@ -119,9 +135,49 @@ const Form = ({ formId, tournamentForm, forNewTournament = true }) => {
           required
         />
 
-        <button type="submit" className="btn">
+        <button type="submit">
           Submit
         </button>
+      </form>
+      <p>{message}</p>
+      <div>
+        {Object.keys(errors).map((err, index) => (
+          <li key={index}>{err}</li>
+        ))}
+      </div>
+    </>
+  )
+  :
+  (
+    <>
+      <form className={styles.form} id={formId} onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          maxLength="140"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="category">Category</label>
+        <input
+          type="text"
+          maxLength="50"
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+          required
+        />
+        <div className={styles.button_container}>
+          <button onClick={handleSubmit}>
+            Submit
+          </button>
+          <button onClick={deleteTournament}>
+            Delete
+          </button>
+        </div>
       </form>
       <p>{message}</p>
       <div>

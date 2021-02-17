@@ -47,6 +47,12 @@ const createBracket = (contestants) => {
     for (let i = 0; i < seedIndex.length; i++) {
       bracket[0][i >> 1][i % 2] = entrantList[seedIndex[i]];
     }
+    //move byes to next round automatically
+    bracket[0].forEach((match, matchIndex) => {
+      if (match[1] === 'bye') {
+        bracket[1][matchIndex >> 1][matchIndex % 2] = match[0];
+      }
+    })
     return bracket;
 }
 
