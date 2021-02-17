@@ -171,9 +171,7 @@ const TournamentPage = ({ tournament }) => {
           }
 
           {/* Bracket component */}
-          <div className={styles.bracket_container}>
-            <Bracket tournament={tournament}/>
-          </div>
+          <Bracket tournament={tournament}/>
         </div>
       </div>
     </div>

@@ -1,12 +1,14 @@
 .bracket_container {
-  min-width: 900px;
-  max-width: 1200px;
+  box-sizing: content-box;
+  max-width: 900px;
   display: flex;
-  height: 200%;
+  height: 100%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
   margin-top: 2rem;
-  padding-bottom: 10vh;
+  margin-bottom: 2rem;
+  padding-bottom: 3vh;
+  overflow-x: auto;
 }
 
 .bracket_round {
@@ -28,6 +30,8 @@
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
 }
 
 .player_card {
