@@ -93,7 +93,6 @@ const TournamentPage = ({ tournament }) => {
   }
 
   const handleDelete = (e, contestant) => {
-    console.log(contestant)
     deleteContestant(contestant);
   }
 

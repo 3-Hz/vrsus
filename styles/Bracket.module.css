@@ -41,6 +41,8 @@
   border-radius: .25rem;
   padding: .2rem;
   max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .player_card:hover {
